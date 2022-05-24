@@ -1,40 +1,40 @@
-# ÀsƒtƒHƒ‹ƒ_‚©‚çffmpeg.exe‚ğÀso—ˆ‚é‚æ‚¤‚É‚µ‚Ä‚¨‚­•K—v‚ª‚ ‚è‚Ü‚·B
-# https://ffmpeg.org/download.html ‚©‚çWindows EXE Files‚ğƒ_ƒEƒ“ƒ[ƒh‚µ‚Ä‰ğ“€‚µA
-# ‚±‚ÌƒXƒNƒŠƒvƒg‚Æ“¯‚¶ƒtƒHƒ‹ƒ_‚Ébin/ffmpeg.exe‚ğ’u‚¢‚Ä‚­‚¾‚³‚¢B(‘¼‚Ìƒtƒ@ƒCƒ‹‚Í•s—v)
+# å®Ÿè¡Œãƒ•ã‚©ãƒ«ãƒ€ã‹ã‚‰ffmpeg.exeã‚’å®Ÿè¡Œå‡ºæ¥ã‚‹ã‚ˆã†ã«ã—ã¦ãŠãå¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
+# https://ffmpeg.org/download.html ã‹ã‚‰Windows EXE Filesã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã—ã¦è§£å‡ã—ã€
+# ã“ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã¨åŒã˜ãƒ•ã‚©ãƒ«ãƒ€ã«bin/ffmpeg.exeã‚’ç½®ã„ã¦ãã ã•ã„ã€‚(ä»–ã®ãƒ•ã‚¡ã‚¤ãƒ«ã¯ä¸è¦)
 
-#@ƒAƒZƒ“ƒuƒŠ‚Ì“Ç‚İ‚İ
+#ã€€ã‚¢ã‚»ãƒ³ãƒ–ãƒªã®èª­ã¿è¾¼ã¿
 [void][System.Reflection.Assembly]::Load("Microsoft.VisualBasic, Version=8.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a")
 [void][System.Reflection.Assembly]::LoadWithPartialName("System.windows.forms")
 
 $dialog = New-Object System.Windows.Forms.OpenFileDialog
-$dialog.Filter = "“®‰æƒtƒ@ƒCƒ‹(*.MP4;*.MOV;*.MKV)|*.MP4;*.MOV;*.MKV;"
-# “®‰æ‚ğ’u‚¢‚Ä‚¢‚éƒtƒHƒ‹ƒ_‚Ìâ‘ÎƒpƒX‚ğİ’è‚µ‚Ä‚­‚¾‚³‚¢
-$dialog.Title = "ƒtƒ@ƒCƒ‹‚ğ‘I‘ğ‚µ‚Ä‚­‚¾‚³‚¢"
+$dialog.Filter = "å‹•ç”»ãƒ•ã‚¡ã‚¤ãƒ«(*.MP4;*.MOV;*.MKV)|*.MP4;*.MOV;*.MKV;"
+# å‹•ç”»ã‚’ç½®ã„ã¦ã„ã‚‹ãƒ•ã‚©ãƒ«ãƒ€ã®çµ¶å¯¾ãƒ‘ã‚¹ã‚’è¨­å®šã—ã¦ãã ã•ã„
+$dialog.Title = "ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é¸æŠã—ã¦ãã ã•ã„"
 
-### ƒ†[ƒUİ’è
-##### ƒtƒF[ƒhƒAƒEƒg‚Ì’·‚³(•b)
+### ãƒ¦ãƒ¼ã‚¶è¨­å®š
+##### ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¢ã‚¦ãƒˆã®é•·ã•(ç§’)
 $fadelen = 2
-##### ‰ŠúƒtƒHƒ‹ƒ_‚Ìİ’èBİ’è‚µ‚È‚­‚Ä‚à‚¢‚¢‚Å‚·‚ªA“®‰æ’u‚«êƒtƒHƒ‹ƒ_‚ğİ’è‚µ‚Ä‚¨‚­‚ÆŠy‚Å‚·B
+##### åˆæœŸãƒ•ã‚©ãƒ«ãƒ€ã®è¨­å®šã€‚è¨­å®šã—ãªãã¦ã‚‚ã„ã„ã§ã™ãŒã€å‹•ç”»ç½®ãå ´ãƒ•ã‚©ãƒ«ãƒ€ã‚’è¨­å®šã—ã¦ãŠãã¨æ¥½ã§ã™ã€‚
 $dialog.InitialDirectory = "D:\enc\otoge\"
 
 
-# ƒtƒ@ƒCƒ‹‘I‘ğƒ_ƒCƒAƒƒO‚ğ•\¦
+# ãƒ•ã‚¡ã‚¤ãƒ«é¸æŠãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã‚’è¡¨ç¤º
 if($dialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK){
-  # •¡”‘I‘ğ‚ğ‹–‰Â‚µ‚Ä‚¢‚é‚Í $dialog.FileNames ‚ğ—˜—p‚·‚é
-  Write-Output ($dialog.FileName + " ‚ª‘I‘ğ‚³‚ê‚Ü‚µ‚½B")
+  # è¤‡æ•°é¸æŠã‚’è¨±å¯ã—ã¦ã„ã‚‹æ™‚ã¯ $dialog.FileNames ã‚’åˆ©ç”¨ã™ã‚‹
+  Write-Output ($dialog.FileName + " ãŒé¸æŠã•ã‚Œã¾ã—ãŸã€‚")
 
-  $ST = [Microsoft.VisualBasic.Interaction]::InputBox("ŠJnˆÊ’u‚ğİ’è‚µ‚Ä‚­‚¾‚³‚¢BŒ`®c(h:)m:s", "ŠJnˆÊ’u‚Ìİ’è")
-  $ED = [Microsoft.VisualBasic.Interaction]::InputBox("I—¹ˆÊ’u‚ğİ’è‚µ‚Ä‚­‚¾‚³‚¢BŒ`®c(h:)m:s", "I—¹ˆÊ’u‚Ìİ’è")
+  $ST = [Microsoft.VisualBasic.Interaction]::InputBox("é–‹å§‹ä½ç½®ã‚’è¨­å®šã—ã¦ãã ã•ã„ã€‚å½¢å¼â€¦(h:)m:s", "é–‹å§‹ä½ç½®ã®è¨­å®š")
+  $ED = [Microsoft.VisualBasic.Interaction]::InputBox("çµ‚äº†ä½ç½®ã‚’è¨­å®šã—ã¦ãã ã•ã„ã€‚å½¢å¼â€¦(h:)m:s", "çµ‚äº†ä½ç½®ã®è¨­å®š")
 
   $arr = $ST.Split(":")
-  $mul = 1 # h:m:s‚Ì•ÏŠ·—p
+  $mul = 1 # h:m:sã®å¤‰æ›ç”¨
   $st_sec = 0
   for ($i=$arr.Length-1; $i -ge 0; $i--){
     $st_sec += $mul * $arr[$i]
     $mul *= 60
   }
   $arr = $ED.Split(":")
-  $mul = 1 # h:m:s‚Ì•ÏŠ·—p
+  $mul = 1 # h:m:sã®å¤‰æ›ç”¨
   $ed_sec = 0
   for ($i=$arr.Length-1; $i -ge 0; $i--){
     $ed_sec += $mul * $arr[$i]
@@ -44,15 +44,16 @@ if($dialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK){
 
   $tmp = Split-Path $dialog.Filename -Leaf
 
-  $outputfile = $tmp + "_cut.mp4" # o—Íƒtƒ@ƒCƒ‹–¼‚Ìİ’èB–{ƒXƒNƒŠƒvƒg‚ª‚ ‚éƒtƒHƒ‹ƒ_ˆÈ‰º‚É¶¬B
-  #$outputfile = $dialog.FileName + ".mp4" # o—Íƒtƒ@ƒCƒ‹–¼‚ğŒÅ’è‚·‚éê‡‚Í‚±‚¿‚ç
+  $outputfile = $tmp + "_cut.mp4" # å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«åã®è¨­å®šã€‚æœ¬ã‚¹ã‚¯ãƒªãƒ—ãƒˆãŒã‚ã‚‹ãƒ•ã‚©ãƒ«ãƒ€ä»¥ä¸‹ã«ç”Ÿæˆã€‚
+  #$outputfile = $dialog.FileName + ".mp4" # å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«åã‚’å›ºå®šã™ã‚‹å ´åˆã¯ã“ã¡ã‚‰
 
   $fadeoutst = $duration-$fadelen
   $fade = " -af volume=0.0dB,afade=t=in:st=0:d=$fadelen,afade=t=out:st=$fadeoutst"+":d=$fadelen -vf yadif=0:-1,fade=t=in:st=0:d=$fadelen,fade=t=out:st=$fadeoutst"+":d=$fadelen "
-  # ffmpegƒRƒ}ƒ“ƒh‚Ìì¬BTwitter“®‰æŒü‚¯‚Ìİ’è‚É‚µ‚Ä‚¢‚Ü‚·B
+  # ffmpegã‚³ãƒãƒ³ãƒ‰ã®ä½œæˆã€‚Twitterå‹•ç”»å‘ã‘ã®è¨­å®šã«ã—ã¦ã„ã¾ã™ã€‚
   $cmd = "ffmpeg.exe -ss $st_sec " +"-i " + $dialog.FileName + " -hide_banner -t $duration -b:a 256k -b:v 10M -c:v h264_nvenc " + $fade + $outputfile
+  # $cmd = "ffmpeg.exe -ss $st_sec " +"-i " + $dialog.FileName + " -hide_banner -t $duration -b:a 256k -b:v 10M -c:v h264 " + $fade + $outputfile # NVIDIAã®ã‚°ãƒ©ãƒœã‚’æŒã£ã¦ã„ãªã„æ–¹ã¯ã“ã¡ã‚‰
   Write-Output ($cmd)
 
   CMD /C $cmd
-  [Microsoft.VisualBasic.Interaction]::MsgBox("ƒGƒ“ƒR[ƒhŠ®—¹!   "+$cmd) # ƒGƒ“ƒR[ƒhŠ®—¹‚Ìƒ_ƒCƒAƒƒO•\¦B•s—v‚È‚çÁ‚µ‚Ä‚­‚¾‚³‚¢B
+  [Microsoft.VisualBasic.Interaction]::MsgBox("ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰å®Œäº†!   "+$cmd) # ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰å®Œäº†ã®ãƒ€ã‚¤ã‚¢ãƒ­ã‚°è¡¨ç¤ºã€‚ä¸è¦ãªã‚‰æ¶ˆã—ã¦ãã ã•ã„ã€‚
 }
