@@ -1,0 +1,2 @@
+# moviecut_ps1
+PowerShell+ffmpegで動画カットをするためのスクリプト
